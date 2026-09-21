@@ -40,6 +40,20 @@ class Vector3 {
         return new Vector3(x * cos - y * sin, x * sin + y * cos, z);
     }
 
+    public function dot(v: Vector3): Float {
+        return x * v.x + y * v.y + z * v.z;
+    }
+
+    public function length(): Float {
+        return Math.sqrt(x * x + y * y + z * z);
+    }
+
+    public function normalize(): Vector3 {
+        var len = length();
+        if (len == 0) return new Vector3(0, 0, 0);
+        
+        return new Vector3(x / len, y / len, z / len);
+    }
 
     public function extract(fov: Float, width: Float, height: Float): { x: Float, y: Float } {
         if (z <= 0.1) return null;
