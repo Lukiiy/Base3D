@@ -1,5 +1,6 @@
 package src;
 
+@:keep
 class Vector3 {
     public var x: Float;
     public var y: Float;
