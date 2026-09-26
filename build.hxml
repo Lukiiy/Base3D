@@ -1,0 +1,9 @@
+-cp .
+-main BuildJS
+-js bin/js/engine.js
+
+--next
+
+-cp .
+-main BuildLua
+-lua bin/love/engine.lua
