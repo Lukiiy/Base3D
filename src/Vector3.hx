@@ -55,13 +55,4 @@ class Vector3 {
         
         return new Vector3(x / len, y / len, z / len);
     }
-
-    public function extract(fov: Float, width: Float, height: Float): { x: Float, y: Float } {
-        if (z <= 0.1) return null;
-
-        var xProj = (x / z) * fov + (width / 2);
-        var yProj = (-y / z) * fov + (height / 2);
-
-        return { x: xProj, y: yProj };
-    }
 }
