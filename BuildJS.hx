@@ -6,6 +6,8 @@ class BuildJS {
     public static var Mesh = src.Mesh;
     public static var Object3D = src.Object3D;
     public static var Light = src.Light;
+    public static var Scene = src.Scene;
+    public static var Stroke = src.Stroke;
 
     static function main() {}
 }
