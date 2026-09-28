@@ -1,6 +1,8 @@
 -cp .
 -main BuildJS
 -js bin/js/engine.js
+-D analyzer-optimize
+-D js-es=6
 
 --next
 
