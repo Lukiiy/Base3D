@@ -16,4 +16,14 @@ class ColorUtils {
         
         return rgb(red, green, blue);
     }
+
+    public static function getShade(c: Int, factor: Float): Int {
+        if (factor >= 1.0) return c;
+        
+        var red = Std.int(getRed(c) * factor);
+        var green = Std.int(getGreen(c) * factor);
+        var blue = Std.int(getBlue(c) * factor);
+
+        return (red << 16) | (green << 8) | blue;
+    }
 }
