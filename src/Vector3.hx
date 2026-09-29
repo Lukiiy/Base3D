@@ -16,6 +16,7 @@ class Vector3 {
     public function add(v: Vector3): Vector3 return new Vector3(x + v.x, y + v.y, z + v.z);
     public function sub(v: Vector3): Vector3 return new Vector3(x - v.x, y - v.y, z - v.z);
     public function scale(s: Float): Vector3 return new Vector3(x * s, y * s, z * s);
+    public function cross(v: Vector3): Vector3 return new Vector3(y * v.z - z * v.y, z * v.x - x * v.z, x * v.y - y * v.x);
 
     public function rotateX(angleDeg: Float): Vector3 {
         var rad = angleDeg * (Math.PI / 180.0);
