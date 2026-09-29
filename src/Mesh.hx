@@ -34,6 +34,22 @@ class Mesh {
 
         return new Mesh(verts, faces);
     }
+
+    public static function createPlane(width: Float = 1, height: Float = 1): Mesh {
+        var halfW = width / 2;
+        var halfH = height / 2;
+
+        var verts = [
+            new Vector3(-halfW, -halfH, 0),
+            new Vector3(halfW, -halfH, 0),
+            new Vector3(halfW, halfH, 0),
+            new Vector3(-halfW, halfH, 0)
+        ];
+
+        var faces = [new Face([3, 2, 1, 0], new Vector3(0, 0, -1))];
+
+        return new Mesh(verts, faces);
+    }
 }
 
 class Face {
