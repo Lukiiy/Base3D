@@ -1,7 +1,11 @@
 package src;
 
-interface Renderer {
-    function clear(hex: Int = 0x000000): Void;
-    function drawLine(x: Float, y: Float, x2: Float, y2: Float, color: Int = 0xffffff, thickness: Float = 1): Void;
-    function drawPolygon(points: Array<{x: Float, y: Float}>, fill: Int = 0xffffff): Void;
+class Renderer {
+    private static inline var NEAR_PLANE: Float = 0.1;
+
+    private var target: IRenderer;
+
+    public function new(target: IRenderer) {
+        this.target = target;
+    }
 }
