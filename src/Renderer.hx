@@ -9,3 +9,11 @@ class Renderer {
         this.target = target;
     }
 }
+
+typedef RenderableFace = {
+    coords: Array<{x: Float, y: Float}>,
+    averageZ: Float,
+    color: Int,
+    wireframe: Bool,
+    modifiers: Array<PostModifier>
+};
