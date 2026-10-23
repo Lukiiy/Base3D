@@ -50,6 +50,38 @@ class Mesh {
 
         return new Mesh(verts, faces);
     }
+
+    public static function createPyramid(base: Float = 1, height: Float = 1): Mesh {
+        var s = base / 2;
+
+        var verts = [
+            new Vector3(-s, 0, -s),
+            new Vector3(s, 0, -s),
+            new Vector3(s, 0, s),
+            new Vector3(-s, 0, s),
+            new Vector3(0, height, 0) // top
+        ];
+
+        var faces = [new Face([0, 3, 2, 1], new Vector3(0, -1, 0))]; // base
+
+        var sides = [
+            [0, 1],
+            [1, 2],
+            [2, 3],
+            [3, 0]
+        ];
+
+        for (edge in sides) {
+            var a = verts[edge[0]];
+            var b = verts[edge[1]];
+            var top = verts[4];
+            var normal = top.sub(a).cross(b.sub(a)).normalize();
+
+            faces.push(new Face([edge[0], edge[1], 4], normal));
+        }
+
+        return new Mesh(verts, faces);
+    }
 }
 
 class Face {
